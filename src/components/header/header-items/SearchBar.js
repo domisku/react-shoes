@@ -1,8 +1,15 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
+import classes from './SearchBar.module.scss';
+
+
 function SearchBar() {
   return (
-    <div>
-      <label htmlFor="search-bar"></label>
-      <input type='text' id="search-bar"></input>
+    <div className={classes.container}>
+      <label htmlFor="search-bar">
+        <FontAwesomeIcon icon={faMagnifyingGlass} className={classes.icon} />
+      </label>
+      <input type='text' id="search-bar" placeholder='search...' className={classes.input}></input>
     </div>
   );
 }

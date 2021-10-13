@@ -6,10 +6,12 @@ import classes from "./MainHeader.module.scss";
 function MainHeader() {
   return (
     <div className={classes.container}>
-      <Categories />
-      <h1 className={classes.title}>ReactShoes</h1>
-      <SearchBar />
-      <CustomerActions />
+      <div className={classes.wrapper}>
+        <Categories />
+        <h1 className={classes.title}>Shoeworld</h1>
+        <SearchBar />
+        <CustomerActions />
+      </div>
     </div>
   );
 }

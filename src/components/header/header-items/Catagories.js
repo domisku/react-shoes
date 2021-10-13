@@ -6,6 +6,7 @@ function Categories() {
       <span>Women</span>
       <span>Men</span>
       <span>Kids</span>
+      <span>Sale</span>
     </div>
   );
 }
