@@ -1,0 +1,44 @@
+.container {
+    width: 18rem;
+    font-family: 'Lato', sans-serif;
+    margin-right: 3rem;
+}
+
+.container h3 {
+    font-size: 1.4rem;
+}
+
+.list {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.filter-list {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.filter-list li {
+    font-size: 1.4rem;
+    padding: 1.5rem 0;
+    border-bottom: 3px solid rgb(241,241,241);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.icon {
+    background-color: white;
+    height: 1.5rem;
+}
+
+.filter-list li button {
+    background-color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.dropdown {
+    width: 100%;
+}
+

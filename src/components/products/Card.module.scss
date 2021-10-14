@@ -1,0 +1,59 @@
+.container {
+    position: relative;
+    width: 24%;
+    height: 21.5rem;
+    border: 2px solid rgb(241,241,241);
+    margin-bottom: 1.1rem;
+}
+
+.container img {
+    width: 100%;
+    height: 15rem;
+    object-fit: cover;
+}
+
+.card-footer {
+    text-align: center;
+    padding-top: 0;
+}
+
+.card-footer p, h4, div {
+    margin: 0;
+    padding: 0;
+}
+
+.icon {
+    position: absolute;
+    top: 5%;
+    right: 9%;
+    color: rgba(255, 255, 255, 0.923);
+    height: 1.5rem;
+    cursor: pointer;
+}
+
+.special {
+    position: absolute;
+    font-family: 'Lato', sans-serif;
+    background-color: rgba(48, 205, 48, 0.298);
+    padding-top: 0.3rem;
+    padding-bottom: 0.3rem;
+    width: 20%;
+}
+
+.brand {
+    font-family: 'Lato', sans-serif;
+    padding-top: 0.6rem;
+    font-size: larger
+}
+
+.model {
+    font-family: 'Lato', sans-serif;
+    color: rgb(157, 157, 157);
+    font-size: 0.9rem;
+    padding-bottom: 0.5rem;
+}
+
+.price {
+    font-family: 'Lato', sans-serif;
+    font-size: 1.3rem;
+}

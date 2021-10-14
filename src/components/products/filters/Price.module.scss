@@ -1,0 +1,42 @@
+.icon {
+    background-color: white;
+    height: 1.5rem;
+}
+
+.dropdown {
+    width: 100%;
+}
+
+.container input {
+    width: 5rem;
+    height: 3rem;
+    outline: none;
+    border: none;
+    border-bottom: 2px solid black;
+    font-size: 1.2rem;
+    border-left: 2px solid black;
+    padding-top: 0.5rem;
+    padding-left: 0.5rem;
+}
+
+.container label:first-of-type {
+    position: absolute;
+    top: 0%;
+    left: 10%;
+    font-size: 0.8rem;
+}
+
+.container label:last-of-type {
+    position: absolute;
+    top: 0%;
+    left: 60%;
+    font-size: 0.8rem;
+}
+
+.container {
+   position: relative;
+   display: flex;
+   justify-content: space-around;
+   align-items: center;
+   margin-top: 1rem;
+}
