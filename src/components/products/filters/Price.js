@@ -12,12 +12,23 @@ function Price() {
     }
 
     function Inputs() {
+        const [minValue, setMinValue] = useState(0);
+        const [maxValue, setMaxValue] = useState(999);
+
+        function minInputHandler(event) {
+            setMinValue(event.target.value);
+        }
+
+        function maxInputHandler(event) {
+            setMaxValue(event.target.value);
+        }
+
         return (
             <div className={classes.container}>
                 <label htmlFor='from'>From</label>
-                <input type='text' value='0' min='0' max='999' id='from'></input>
+                <input type='number' value={minValue} onInput={minInputHandler} min='0' max='999' id='from'></input>
                 <label htmlFor='to'>To</label>
-                <input type='text' value='999' min='0' max='999' id='to'></input>
+                <input type='number' value={maxValue} onInput={maxInputHandler} min='0' max='999' id='to'></input>
             </div>
         );
     }

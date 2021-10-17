@@ -1,14 +1,24 @@
+import { useState } from 'react';
 import classes from "./Content.module.scss";
 import Card from "./Card";
-import productData from "./productData";
+// import productData from "./productData";
+// import FilteredData from "./FilteredData";
+import fullProductData from "./fullProductData";
 
 function Content() {
+    // const [finalData, setFinalData] = useState([]);
+
+    // function receiveFilteredData(filteredData) {
+    //     setFinalData(filteredData);
+    // }
+
+
   return (
     <div className={classes.container}>
       <h1>All Products</h1>
       <div>Sort</div>
       <div className={classes["main-content"]}>
-        {productData.map((data) => {
+        {fullProductData.map((data) => {
           return (
             <Card
               brand={data.brand}
@@ -20,6 +30,7 @@ function Content() {
           );
         })}
       </div>
+      {/* <FilteredData filter={receiveFilteredData} /> */}
     </div>
   );
 }
