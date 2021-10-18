@@ -11,8 +11,8 @@ function Slide(props) {
           }
           key={index}
         >
-          <img src={data.image} alt="shoe" />
-          <h2>{data.description}</h2>
+          <img className={classes.image} src={data.image} alt="shoe" />
+          <h2 className={classes.description}>{data.description}</h2>
         </div>
       ))}
       <div className={classes.slideDots}>

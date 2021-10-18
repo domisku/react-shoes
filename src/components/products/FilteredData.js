@@ -1,15 +1,15 @@
-import fullProductData from "./fullProductData";
+// import fullProductData from "./fullProductData";
 
 
-function FilteredData(props) {
+// function FilteredData(props) {
 
-    console.log(props);
+//     console.log(props);
 
-    const filteredProductData = fullProductData.filter((product) => props.brands.includes(product.brand));
+//     const filteredProductData = fullProductData.filter((product) => props.brands.includes(product.brand));
     
-    // props.filter(filteredProductData);
+//     // props.filter(filteredProductData);
     
-    return null;
-}
+//     return null;
+// }
 
-export default FilteredData;
+// export default FilteredData;

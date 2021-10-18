@@ -1,0 +1,58 @@
+.container {
+    margin-top: 3rem;
+    display: flex;
+    justify-content: space-evenly;
+    font-family: 'Lato', sans-serif;
+}
+
+.img-container img {
+    width: 100%;
+    height: 30rem;
+    object-fit: cover;
+    border: 1px solid black;
+}
+
+.button-to-cart {
+    width: 80%;
+    height: 3rem;
+    border: 1px solid black;
+    background-color: black;
+    font-family: 'Lato', sans-serif;
+    font-size: 1.5rem;
+    color:white;
+}
+
+.button-heart {
+    background-color: white;
+    border: 1px solid black;
+    height: 3rem;
+    width: 15%;
+}
+
+.details-container {
+    width: 40%;
+}
+
+.details-container h2 {
+    font-size: 2rem;
+}
+
+.details-container .model {
+    color: rgb(157, 157, 157);
+}
+
+.details-container .price {
+    font-size: 2rem;
+}
+
+.details-container > div {
+    font-size: 1.2rem;
+}
+
+.icon {
+    width: 3rem;
+}
+
+.button-heart .icon {
+    height: 1.5rem;
+}

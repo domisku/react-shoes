@@ -11,6 +11,7 @@ import Carousel from "./components/carousel/Carousel";
 import AboutUs from "./components/main/AboutUs";
 import PopularCategories from "./components/main/PopularCategories";
 import ProductsPage from "./components/products/ProductsPage";
+import ProductDetails from "./components/products/detailPage/ProductDetails";
 
 function App() {
   const [popupIsShown, setPopupIsShown] = useState(true);
@@ -34,6 +35,9 @@ function App() {
           </Route>
           <Route path="/products">
             <ProductsPage />
+          </Route>
+          <Route path="/product-details/:productId">
+            <ProductDetails />
           </Route>
         </Switch>
       </main>

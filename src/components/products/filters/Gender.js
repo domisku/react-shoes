@@ -1,11 +1,14 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
 import classes from "./Gender.module.scss";
-import fullProductData from "../fullProductData";
+import productData from "../productData";
+import { useDispatch } from "react-redux";
+import { filterActions } from "../../../store";
 
 function Gender() {
   const [isActive, setIsActive] = useState(false);
+  const dispatch = useDispatch();
 
   function clickHandler() {
     if (isActive === false) setIsActive(true);
@@ -13,19 +16,35 @@ function Gender() {
   }
 
   function Checkbox() {
+    const [activeGenders, setActiveGenders] = useState([]);
+
     const genderData = [];
 
-    for (let product of fullProductData) {
+    for (let product of productData) {
       genderData.push(product.gender);
     }
 
-    const gender = [...new Set(genderData)];
+    const genders = [...new Set(genderData)];
 
-    return gender.map((gender, index) => (
+    function onChange(event) {
+        if (event.target.checked) {
+            setActiveGenders((previous => [...previous, event.target.name]));
+        } else {
+            setActiveGenders((previous) => previous.filter(gender => gender !== event.target.name))
+        }
+    }
+
+    const noFilter = useRef(genders);
+    useEffect(() => {
+        if (!activeGenders[0]) dispatch(filterActions.updateGender({genders: noFilter.current}));
+        else dispatch(filterActions.updateGender({genders: activeGenders}));
+    }, [activeGenders]);
+
+    return genders.map((gender, index) => (
       <div className={classes.container}>
         <label htmlFor={`gender${index}`}>
           {gender}
-          <input type="checkbox" id={`gender${index}`}></input>
+          <input name={gender} type="checkbox" id={`gender${index}`} onChange={onChange}></input>
           <span className={classes.checkmark}></span>
         </label>
       </div>
@@ -38,11 +57,9 @@ function Gender() {
       <button onClick={clickHandler}>
         <FontAwesomeIcon icon={faAngleDown} className={classes.icon} />
       </button>
-      {isActive && (
-        <div className={classes.dropdown}>
+        <div className={`${classes.dropdown} ${isActive && classes.active}`}>
           <Checkbox />
         </div>
-      )}
     </>
   );
 }

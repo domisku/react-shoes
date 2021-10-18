@@ -1,10 +1,13 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleDown } from '@fortawesome/free-solid-svg-icons';
 import classes from './Price.module.scss';
+import { useDispatch } from "react-redux";
+import { filterActions } from "../../../store";
 
 function Price() {
     const [isActive, setIsActive] = useState(false);
+    const dispatch = useDispatch();
 
     function clickHandler() {
         if (isActive === false) setIsActive(true);
@@ -23,6 +26,10 @@ function Price() {
             setMaxValue(event.target.value);
         }
 
+        useEffect(() => {
+            dispatch(filterActions.updatePrice({ prices: [+minValue, +maxValue] }));
+        }, [minValue, maxValue]);
+
         return (
             <div className={classes.container}>
                 <label htmlFor='from'>From</label>
@@ -39,7 +46,7 @@ function Price() {
       <button onClick={clickHandler}>
         <FontAwesomeIcon icon={faAngleDown} className={classes.icon} />
       </button>
-      {isActive && <div className={classes.dropdown}><Inputs /></div>}
+      <div className={`${classes.dropdown} ${isActive && classes.active}`}><Inputs /></div>
     </>
   );
 }
