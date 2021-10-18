@@ -1,6 +1,4 @@
-import { useState } from 'react';
 import { useSelector } from 'react-redux';
-import { filterActions } from '../../store';
 import classes from "./Content.module.scss";
 import Card from "./Card";
 import productData from "./productData";
@@ -10,7 +8,6 @@ import productData from "./productData";
 function Content() {
     const filters = useSelector((state) => state.data);
 
-    console.log(filters);
     let data;
 
     if (filters === undefined) data = productData;

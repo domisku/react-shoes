@@ -1,5 +1,4 @@
 import { createSlice, configureStore } from '@reduxjs/toolkit';
-import productData from '../components/products/productData';
 
 const initialState = { brands: 'Adidas', colors: 'Brown', sizes: 'a', genders: 'g', types: 'a', seasons: 'f'};
 
