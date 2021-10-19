@@ -6,11 +6,11 @@ import productData from "./productData";
 // import fullProductData from "./fullProductData";
 
 function Content() {
-    const filters = useSelector((state) => state.data);
+    const filters = useSelector((state) => state.filter.data);
 
     let data;
 
-    if (filters === undefined) data = productData;
+    if (filters === null) data = productData;
     else data = productData.filter((product, index) => filters.brands.includes(product.brand) && 
     filters.colors.includes(product.color) && filters.genders.includes(product.gender) &&
     filters.types.includes(product.type) && product.size.some((size) => filters.sizes.includes(size)) &&

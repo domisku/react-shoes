@@ -2,8 +2,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser, faHeart, faCartShopping } from '@fortawesome/free-solid-svg-icons';
 import classes from './CustomerActions.module.scss';
 import Modal from '../../UI/Modal';
-import Register from '../../user/Register';
 import { useState } from 'react';
+import Login from '../../user/Login';
 
 function CustomerActions() {
   const [userPageIsShown, setUserPageIsShown] = useState(false);
@@ -23,7 +23,7 @@ function CustomerActions() {
       <span>
         <FontAwesomeIcon icon={faCartShopping} className={classes.icon}/>
       </span>
-      {userPageIsShown && <Modal><Register /></Modal>}
+      {userPageIsShown && <Modal><Login /></Modal>}
     </div>
   );
 }
