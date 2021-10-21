@@ -3,7 +3,7 @@ import { useState, useRef } from 'react';
 
 const url = 'https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyBnxvW60oxEUOdVTAER-T14lcNiJq6ybVE';
 
-function Register() {
+function Register(props) {
     const passwordInputRef = useRef();
     const emailInputRef = useRef();
 
@@ -59,7 +59,7 @@ function Register() {
     }
 
     function validateInput(value, type) {
-        const passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/;
+        const passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{6,}$/;
         const emailRegex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
         switch(type) {
@@ -87,6 +87,7 @@ function Register() {
                 <input value={password} type='password' id='password' onChange={passwordChangeHandler} onBlur={isValid} className={!passwordIsValid && classes['invalid-password']} ref={passwordInputRef}></input>
                 {!passwordIsValid && <span className={classes.error}>Password must include at least 1 number and a lowercase and an uppercase letter</span>}
                 <button type='submit'>Register</button>
+                <span className={classes['log-in']} onClick={props.switchUserPage}>Log in with an existing account</span>
             </form>
         </div>
     );

@@ -19,6 +19,16 @@
     z-index: 30;
   }
   
+  .button {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    border: none;
+    background-color: transparent;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
   @media (min-width: 768px) {
     .modal {
       width: 40rem;

@@ -30,7 +30,18 @@
     height: 4rem;
     width: 15%;
     margin-bottom: 1rem;
+    cursor: pointer;
 }
+
+.button-heart-active {
+    background-color: white;
+    border: 1px solid rgb(203, 162, 248);
+    height: 4rem;
+    width: 15%;
+    margin-bottom: 1rem;
+    cursor: pointer;
+}
+
 
 .details-container {
     width: 40%;
@@ -60,9 +71,22 @@
 
 .icon {
     width: 3rem;
+    
 }
 
 .button-heart .icon {
+    stroke: black;
+    stroke-width: 40;
+    color:transparent;
+}
+
+.button-heart-active .icon {
+    stroke: rgb(203, 162, 248);
+    stroke-width: 40;
+    color: rgb(203, 162, 248);
+}
+
+.button-heart .icon, .button-heart-active .icon {
     height: 1.5rem;
 }
 

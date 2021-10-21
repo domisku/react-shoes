@@ -11,16 +11,17 @@
     width: 100%;
 }
 
-.button {
+.close-popup {
     position: absolute;
     top: 1rem;
     right: 1rem;
     border: none;
     background-color: transparent;
     font-size: 1.5rem;
+    cursor: pointer;
 }
 
-.button2 {
+.close2-popup {
     font-weight: bolder;
     height: 3.29rem;
     width: 5rem;
@@ -29,8 +30,13 @@
     background-color: black;
     font-family: 'Lato', sans-serif;
     font-size: 1rem;
+    cursor: pointer;
 }
 
-p {
+.close2-popup:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.popup-text {
     padding-top: 1rem;
 }

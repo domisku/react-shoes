@@ -8,11 +8,11 @@ function Popup(props) {
 
     return ReactDOM.createPortal(
         <div className={classes.container}>
-            <button className={classes.button} onClick={closePopupHandler}>&times;</button>
-            <p><b>Alert!</b> This website is part of a project portfolio
+            <button className={classes['close-popup']} onClick={closePopupHandler}>&times;</button>
+            <p className={classes['popup-text']}><b>Alert!</b> This website is part of a project portfolio
                  and is not used for real ecommerce purposes. 
                  All products shown are only presentational.</p>
-            <button className={classes.button2} onClick={closePopupHandler}>Got it!</button>
+            <button className={classes['close2-popup']} onClick={closePopupHandler}>Got it!</button>
         </div>, 
         document.getElementById('popup-root'))
 }
