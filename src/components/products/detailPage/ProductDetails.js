@@ -11,9 +11,10 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import Select from "react-select";
 import { useState, useEffect } from "react";
-import { useSelector } from 'react-redux'
+import { useSelector } from 'react-redux';
 
 let keyInDatabase;
+let keyInCartDatabase;
 
 function ProductDetails() {
   const params = useParams();
@@ -21,6 +22,11 @@ function ProductDetails() {
   console.log(modalClosed)
 
   const [isInFavourites, setIsInFavourites] = useState(false);
+  const [selectedSize, setSelectedSize] = useState(null);
+  const [objectId, setObjectId] = useState(null);
+  const [quantity, setQuantity] = useState(0);
+
+  console.log(`objectID:${objectId}`)
 
   const details = productData.filter(
     (product) => product.model === params.productId
@@ -41,6 +47,12 @@ function ProductDetails() {
               body: JSON.stringify({model: details.model})
     });
     const data = await response.json();
+
+    console.log('data when added');
+    console.log(data);
+
+    keyInDatabase = data.name;
+
 
     setIsInFavourites(true);
     
@@ -120,6 +132,110 @@ function ProductDetails() {
     }
   }
 
+  useEffect(() => {async function getQuantity() {
+    const idToken = localStorage.getItem('token');
+    const username = localStorage.getItem('username');
+
+    console.log('cart get quantity ran again')
+
+    try {
+    const response = await fetch(`https://react-shoes-default-rtdb.europe-west1.firebasedatabase.app/users/${username}/cart.json?auth=${idToken}`, {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+    });
+    const data = await response.json();
+
+
+    console.log(data)
+
+    let objKey, nestedKey, quantity;
+    let currentModel = details.model;
+
+
+    for (let key in data) {
+      for (let key2 in data[key]) {
+        if (data[key][key2] === currentModel) {
+          objKey = key;
+          quantity = data[key].quantity;
+        }
+      }
+    }
+
+    console.log(objKey, quantity) //NEEED THIIS
+    keyInCartDatabase = objKey;
+
+    setQuantity(quantity);
+    setObjectId(keyInCartDatabase);
+
+    console.log('Success:', data);
+    } catch (error) {
+        console.error('Error:', error);
+        setIsInFavourites(false);
+    }
+  }
+  getQuantity();
+  }, [details.model, modalClosed]);
+
+  async function addToCart() {
+    const idToken = localStorage.getItem('token');
+    const username = localStorage.getItem('username');
+
+    try {
+    const response = await fetch(`https://react-shoes-default-rtdb.europe-west1.firebasedatabase.app/users/${username}/cart.json?auth=${idToken}`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+              },
+              body: JSON.stringify({
+                model: details.model,
+                brand: details.brand, 
+                price: details.price,
+                image: details.image,
+                size: selectedSize,
+                quantity: 1})
+    });
+    const data = await response.json();
+
+    console.log('data when added');
+    console.log(data);
+
+    keyInDatabase = data.name;
+    
+    console.log('Success:', data);
+    } catch (error) {
+         console.error('Error:', error);
+     }
+  }
+
+  async function updateQuantity() {
+    const idToken = localStorage.getItem('token');
+    const username = localStorage.getItem('username');
+
+    try {
+    const response = await fetch(`https://react-shoes-default-rtdb.europe-west1.firebasedatabase.app/users/${username}/cart/${objectId}.json?auth=${idToken}`, {
+        method: 'PATCH',
+        headers: {
+            'Content-Type': 'application/json'
+              },
+              body: JSON.stringify({quantity: quantity + 1})
+    });
+    const data = await response.json();
+
+    console.log('data when added');
+    console.log(data);
+
+    setQuantity(data.quantity)
+
+    keyInCartDatabase = data.name;
+    
+    console.log('Success:', data);
+    } catch (error) {
+         console.error('Error:', error);
+     }
+  }
+
   return (
     <div className={classes.container}>
       <div className={classes["img-container"]}>
@@ -131,6 +247,7 @@ function ProductDetails() {
         <p className={classes.price}>{details.price} &euro;</p>
         <Select
           className={classes.select}
+          onChange={(event) => setSelectedSize(event.value)}
           placeholder="Select Size"
           options={options}
           theme={(theme) => ({
@@ -154,7 +271,8 @@ function ProductDetails() {
           })}
         />
         <div className={classes['button-container']}>
-            <button className={classes["button-to-cart"]}>Add to Cart</button>
+            <button onClick={addToCart}></button>
+            <button className={classes["button-to-cart"]} onClick={updateQuantity}>Add to Cart</button>
             {!isInFavourites && <button className={classes["button-heart"]} onClick={addToFavourites}>
             <FontAwesomeIcon icon={faHeart} className={classes.icon} />
             </button>}
@@ -178,6 +296,7 @@ function ProductDetails() {
           <FontAwesomeIcon className={classes.icon} icon={faWallet} />
           <span>Various Payment Methods</span>
         </div>
+        <div>Quantity: {quantity}</div>
       </div>
     </div>
   );

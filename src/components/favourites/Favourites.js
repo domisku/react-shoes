@@ -85,6 +85,7 @@ function Favourites() {
     return (
         <>
             {favouritesData && <div className={classes.container}>
+                <h3 className={classes.heading}>Favourites</h3>
                 {filteredData.map((product, index) => <div className={classes.wrapper}>
                     <div className={classes['img-container']}>
                         <img className={classes.image} src={product.image} alt='shoe'/>
