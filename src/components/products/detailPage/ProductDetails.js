@@ -25,6 +25,7 @@ function ProductDetails() {
   const [selectedSize, setSelectedSize] = useState(null);
   const [objectId, setObjectId] = useState(null);
   const [quantity, setQuantity] = useState(0);
+  const [isSizeSelected, setIsSizeSelected] = useState(true);
 
   console.log(`objectID:${objectId}`)
 
@@ -148,25 +149,25 @@ function ProductDetails() {
     const data = await response.json();
 
 
-    console.log(data)
+    console.log(`data when getCart: ${data}`);
 
-    let objKey, nestedKey, quantity;
+    let objKey, quantityInDB;
     let currentModel = details.model;
 
 
     for (let key in data) {
-      for (let key2 in data[key]) {
-        if (data[key][key2] === currentModel) {
+        if (data[key].model === currentModel && data[key].size === selectedSize) {
           objKey = key;
-          quantity = data[key].quantity;
+          quantityInDB = data[key].quantity;
         }
-      }
     }
 
-    console.log(objKey, quantity) //NEEED THIIS
+    // console.log(objKey, quantity) //NEEED THIIS
     keyInCartDatabase = objKey;
 
-    setQuantity(quantity);
+    console.log(`keyInCartDatabase: ${keyInCartDatabase}`);
+
+    setQuantity(quantityInDB);
     setObjectId(keyInCartDatabase);
 
     console.log('Success:', data);
@@ -176,7 +177,13 @@ function ProductDetails() {
     }
   }
   getQuantity();
-  }, [details.model, modalClosed]);
+  }, [details.model, modalClosed, selectedSize]);
+
+  function addToCartHandler() {
+    if (quantity) updateQuantity();
+    else if (selectedSize) addToCart();
+    else setIsSizeSelected(false);
+  }
 
   async function addToCart() {
     const idToken = localStorage.getItem('token');
@@ -198,10 +205,11 @@ function ProductDetails() {
     });
     const data = await response.json();
 
-    console.log('data when added');
+    console.log(`returned when added: ${data}`);
     console.log(data);
 
-    keyInDatabase = data.name;
+    setObjectId(data.name);
+    setQuantity(1);
     
     console.log('Success:', data);
     } catch (error) {
@@ -245,9 +253,13 @@ function ProductDetails() {
         <h2>{details.brand}</h2>
         <p className={classes.model}>{details.model}</p>
         <p className={classes.price}>{details.price} &euro;</p>
+        {!isSizeSelected && <span className={classes.error}>Please select a size</span>}
         <Select
           className={classes.select}
-          onChange={(event) => setSelectedSize(event.value)}
+          onChange={(event) => {
+            setIsSizeSelected(true);
+            setSelectedSize(event.value)
+          }}
           placeholder="Select Size"
           options={options}
           theme={(theme) => ({
@@ -271,8 +283,7 @@ function ProductDetails() {
           })}
         />
         <div className={classes['button-container']}>
-            <button onClick={addToCart}></button>
-            <button className={classes["button-to-cart"]} onClick={updateQuantity}>Add to Cart</button>
+            <button className={classes["button-to-cart"]} onClick={addToCartHandler}>Add to Cart</button>
             {!isInFavourites && <button className={classes["button-heart"]} onClick={addToFavourites}>
             <FontAwesomeIcon icon={faHeart} className={classes.icon} />
             </button>}
@@ -282,7 +293,7 @@ function ProductDetails() {
         </div>
         <div>
           <FontAwesomeIcon className={classes.icon} icon={faCheck} />
-          <span>Dispatch immediately!</span>
+          <span>Dispatch Immediately!</span>
         </div>
         <div>
           <FontAwesomeIcon className={classes.icon} icon={faShieldBlank} />
@@ -296,7 +307,6 @@ function ProductDetails() {
           <FontAwesomeIcon className={classes.icon} icon={faWallet} />
           <span>Various Payment Methods</span>
         </div>
-        <div>Quantity: {quantity}</div>
       </div>
     </div>
   );

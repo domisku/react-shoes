@@ -1,46 +1,84 @@
-import { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useMemo } from 'react';
 import { useDispatch } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleDown } from '@fortawesome/free-solid-svg-icons';
 import classes from './Brands.module.scss';
-// import fullProductData from '../fullProductData';
 import productData from '../productData';
-// import FilteredData from '../FilteredData';
 import { filterActions } from '../../../store';
+import { useHistory, useLocation } from "react-router";
 
 function Brands() {
     const [isActive, setIsActive] = useState(false);
     const dispatch = useDispatch();
+    const history = useHistory();
 
-    function clickHandler(event) {
-        if (isActive === false) setIsActive(true);
-        else setIsActive(false);
+    function useQuery() {
+        return new URLSearchParams(useLocation().search);
+      }
+    
+    let query = useQuery();
+
+    function clickHandler() {
+        setIsActive(!isActive)
     }
 
     function Checkbox() {
-        const [activeBrands, setActiveBrands] = useState([]);
-        // const [isChecked, setIsChecked] = useState({});
-
-        const brandsData = [];
+        const brandsData = useMemo(() => [], []);
 
         for (let product of productData) {
             brandsData.push(product.brand);
         }
 
-        const brands = [...new Set(brandsData.sort())];
+        const brands = useMemo(() => [...new Set(brandsData)], [brandsData]);
 
-        function onChange(event) {
-            if (event.target.checked) {
-                // setIsChecked((previous) => ({...previous, [event.target.id]: true}));
-                setActiveBrands((previous => [...previous, event.target.name]));
-            } else {
-                setActiveBrands((previous) => previous.filter(brand => brand !== event.target.name))
+        const [activeBrands, setActiveBrands] = useState([]);
+        const [isChecked, setIsChecked] = useState(new Array(brands.length).fill(false));
+
+        useEffect(() => {
+            setActiveBrands(query.getAll('brand'));
+            const updatedIsChecked = new Array(brands.length).fill(false);
+      
+            const queryValues = [];
+      
+            for (let value of query.values()) {
+              queryValues.push(value);
             }
+      
+            brands.forEach((brand, index) => {
+              if (queryValues.includes(brand)) updatedIsChecked[index] = true;
+            });
+      
+            setIsChecked(updatedIsChecked);
+          }, [brands]);
+
+          function onChangeHandler(position, event) {
+            const updatedIsChecked = isChecked.map((brandIsChecked, index) => {
+                return index === position ? !brandIsChecked : brandIsChecked;
+            });
+    
+            if (updatedIsChecked[position]) {
+                setActiveBrands((previous => [...previous, event.target.name]));
+                query.append('brand', event.target.name);
+            } else {
+                setActiveBrands((previous) => previous.filter(brand => brand !== event.target.name));
+                deleteQuery(event.target.name);
+              }
+    
+            setIsChecked(updatedIsChecked);
+            setActiveBrands(query.getAll('brand'));
+    
+            function deleteQuery(name) {
+              const brandQueries = query.getAll('brand').filter(brand => brand !== name);
+              query.delete('brand');
+              for (let brandQuery of brandQueries) query.append('brand', brandQuery);
+            }
+    
+            history.push(`/products?${query}`);
         }
 
         const noFilter = useRef(brands);
         useEffect(() => {
-            if (!activeBrands[0]) dispatch(filterActions.updateBrand({brands: noFilter.current}));
+            if (!query.get('brand')) dispatch(filterActions.updateBrand({brands: noFilter.current}));
             else dispatch(filterActions.updateBrand({brands: activeBrands}));
         }, [activeBrands]);
 
@@ -49,7 +87,7 @@ function Brands() {
                 {brands.map((brand, index) => <div className={classes.container}>
                     <label htmlFor={`brand${index}`}>
                         {brand}
-                        <input name={brand} type='checkbox' id={`brand${index}`} onChange={onChange}></input>
+                        <input key={index} name={brand} type='checkbox' id={`brand${index}`} checked={isChecked[index]} onChange={(event) => onChangeHandler(index, event)}></input>
                         <span className={classes.checkmark}></span>
                     </label>
                 </div>)}

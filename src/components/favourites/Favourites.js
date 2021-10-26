@@ -1,9 +1,10 @@
 import classes from './Favourites.module.scss';
 import productData from '../products/productData';
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 
-function Favourites() {
+function Favourites(props) {
     const [favouritesData, setFavouritesData] = useState(null);
     const [filteredData, setFilteredData] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
@@ -45,6 +46,7 @@ function Favourites() {
       , []);
 
       async function removeFavourite(event) {
+        event.stopPropagation();
         event.preventDefault();
         const id = event.target.id;
 
@@ -84,9 +86,9 @@ function Favourites() {
 
     return (
         <>
+            <h3 className={classes.heading}>Favourites</h3>
             {favouritesData && <div className={classes.container}>
-                <h3 className={classes.heading}>Favourites</h3>
-                {filteredData.map((product, index) => <div className={classes.wrapper}>
+                {filteredData.map((product, index) => <Link to={`/product-details/${product.model}`} onClick={props.toggleFavouritesPage}><div className={classes.wrapper}>
                     <div className={classes['img-container']}>
                         <img className={classes.image} src={product.image} alt='shoe'/>
                     </div>
@@ -96,7 +98,8 @@ function Favourites() {
                         <span className={classes.price}>{product.price} &euro;</span>
                     </div>
                     <button className={classes['remove-button']} id={product.model} onClick={removeFavourite}>&times;</button>
-                </div>)}
+                </div>
+                </Link>)}
             </div>}
             {isLoading && <div className={classes['loading-wrapper']}><div className={classes["lds-facebook"]}><div></div><div></div><div></div></div></div>}
             {DBisEmpty && <div className={classes.container}><span className={classes['empty-list']}>Your favourites list is empty.</span></div>}

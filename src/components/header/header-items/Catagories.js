@@ -5,11 +5,14 @@ function Categories() {
   return (
     <div className={classes.container}>
       <span>
-        <Link to='/products'>Women</Link>
+        <Link to='/products?gender=Women'>Women</Link>
       </span>
-      <span>Men</span>
-      <span>Kids</span>
-      <span>Sale</span>
+      <span>
+        <Link to='/products?gender=Men'>Men</Link>
+      </span>
+      <span>
+        <Link to='/products?gender=Kids'>Kids</Link>
+      </span>
     </div>
   );
 }

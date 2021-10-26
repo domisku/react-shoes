@@ -10,7 +10,7 @@ function Card(props) {
                 <Link className={classes.link} to={`/product-details/${props.model}`}>
                     <img src={props.image} alt='shoe'></img>
                     <div className={classes['card-footer']}>
-                        <div className={classes.special}>{props.special}</div>
+                        {props.special && <div className={classes.special}>{props.special}</div>}
                         <h4 className={classes.brand}>{props.brand}</h4>
                         <div className={classes.model}>{props.model}</div>
                         <div className={classes.price}>{props.price} &euro;</div>

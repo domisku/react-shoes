@@ -1,7 +1,9 @@
 .container {
     display: block;
     font-family: 'Lato', sans-serif;
-    padding: 1rem 3.5rem;
+    padding: 0 3.5rem 1rem 3.5rem;
+    overflow-y: auto;
+    max-height: 70vh;
 }
 
 .wrapper {
@@ -16,8 +18,9 @@
 .heading {
     font-size: 2.2rem;
     font-weight: bold;
-    margin-bottom: 0.85rem;
+    margin-bottom: 0;
     margin-top: 0;
+    padding: 1rem 3.5rem 0.6rem 3.5rem;
 }
 
 .img-container {

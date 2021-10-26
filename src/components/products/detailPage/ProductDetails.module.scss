@@ -38,9 +38,13 @@
     cursor: pointer;
 }
 
+.button-heart:hover {
+    border: 2px solid black;
+}
+
 .button-heart-active {
     background-color: white;
-    border: 1px solid rgb(203, 162, 248);
+    border: 2px solid rgb(203, 162, 248);
     height: 4rem;
     width: 15%;
     margin-bottom: 1rem;
@@ -103,4 +107,9 @@
     display: flex;
     justify-content: space-between;
     margin-top: 2.5rem;
+}
+
+.error {
+    color: red;
+    font-weight: 700;
 }

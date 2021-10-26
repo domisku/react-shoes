@@ -2,7 +2,13 @@
     width: 100%;
 }
 
+
 .main-content {
     display: flex;
     flex-wrap: wrap;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 1rem;
 }
+    
+

@@ -18,28 +18,27 @@
     outline: none;
     border: none;
     font-size: 1.2rem;
-    padding-top: 0.6rem;
-    padding-left: 0.5rem;
+    border: 2px solid lightgray;
+    text-align: center;
 }
 
-.container label:first-of-type {
-    position: absolute;
-    top: 5%;
-    left: 9%;
-    font-size: 0.8rem;
+.container input:hover {
+    border: 2px solid black;
 }
 
-.container label:last-of-type {
-    position: absolute;
-    top: 5%;
-    left: 59%;
-    font-size: 0.8rem;
+.container input:focus {
+    border: 2px solid black;
+}
+
+.container span {
+    text-align: center;
+    width: 2.5rem;
 }
 
 .container {
    position: relative;
    display: flex;
-   justify-content: space-around;
+   justify-content: center;
    align-items: center;
    margin-top: 1rem;
 }

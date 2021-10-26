@@ -1,8 +1,11 @@
 .container {
     display: block;
     font-family: 'Lato', sans-serif;
-    padding: 1rem 3.5rem;
+    padding: 0 3.5rem 1rem 3.5rem;
+    overflow-y: auto;
+    max-height: 70vh;
 }
+
 
 .wrapper {
     width: 100%;
@@ -11,13 +14,15 @@
     padding-bottom: 1.5rem;
     padding-top: 1.5rem;
     border-bottom: 2px solid lightgray;
+    position: relative;
 }
 
 .heading {
     font-size: 2.2rem;
     font-weight: bold;
-    margin-bottom: 0.85rem;
+    margin-bottom: 0;
     margin-top: 0;
+    padding: 1rem 3.5rem 0.6rem 3.5rem;
 }
 
 .img-container {
@@ -55,8 +60,66 @@
     background-color: rgba(0, 0, 0, 0.8);
 }
 
+.buttons-container {
+    margin-left: auto;
+    display: flex;
+}
+
+.change-quantity-container {
+    display: flex;
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    bottom: 14%;
+    right: 25%;
+}
+
+.quantity {
+    font-size: 1.3rem;
+    padding: 0 0.5rem;
+    font-weight: 600;
+}
+
+.increase-quantity {
+    border: none;
+    color: black;
+    background-color: white;
+    height: 2rem;
+    width: 2rem;
+    font-size: 2rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.increase-quantity:hover {
+    background-color: rgb(239, 239, 239);
+}
+
+.decrease-quantity {
+    border: none;
+    color: black;
+    background-color: white;
+    height: 2rem;
+    width: 2rem;
+    font-size: 2rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.decrease-quantity:hover {
+    background-color: rgb(239, 239, 239);
+}
+
+.decrease-quantity-disabled {
+    color: lightgray;
+}
+
 .order-button {
-    width: 30%;
+    width: 40%;
     height: 4rem;
     border: 1px solid black;
     background-color: black;
@@ -86,7 +149,22 @@
 
 .price {
     font-size: 1.5rem;
-    padding-top: 0;
+    margin-top: 1rem;
+    font-weight: 700;
+}
+
+.size {
+    margin-top: 0.5rem;
+}
+
+.total {
+    margin-top: 1.5rem;
+    font-size: 1.2rem;
+}
+
+.total h3 {
+    display: inline;
+    font-size: larger;
 }
 
 .empty-list {

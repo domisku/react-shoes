@@ -86,7 +86,7 @@ function CustomerActions() {
         </Modal>
       )}
       {favouritesPageIsShown && (
-        <Modal toggleFavouritesPage={toggleFavouritesPage}><Favourites /></Modal>
+        <Modal toggleFavouritesPage={toggleFavouritesPage}><Favourites toggleFavouritesPage={toggleFavouritesPage} /></Modal>
       )}
       {cartPageIsShown && (
         <Modal toggleCartPage={toggleCartPage}><Cart /></Modal>
