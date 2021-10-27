@@ -5,7 +5,7 @@
 
 .wrapper {
     margin: auto;
-    width: 60%;
+    width: 65%;
     height: 100%;
     display: flex;
     background-color: white;
@@ -17,5 +17,11 @@
     font-family: 'Roboto', sans-serif;
     font-size: 2rem;
     margin: auto;
-    padding-left: 12rem;
+    font-weight: 900;
+}
+
+@media (max-width: 1200px) {
+    .wrapper {
+        width: 100%;
+    }
 }

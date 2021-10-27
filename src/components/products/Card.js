@@ -16,7 +16,6 @@ function Card(props) {
                         <div className={classes.price}>{props.price} &euro;</div>
                     </div>
                 </Link>
-                <FontAwesomeIcon icon={faHeart} className={classes.icon}/>
             </div>
         
     );

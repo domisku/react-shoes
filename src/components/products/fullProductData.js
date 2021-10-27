@@ -158,7 +158,7 @@ const fullProductData = [
     {
         price: 75.00,
         special: 'New',
-        brand: 'Kin',
+        brand: 'Esser',
         model: '2012',
         size: [36, 37, 38, 39, 40, 41, 42, 43],
         color: 'Red',
@@ -170,7 +170,7 @@ const fullProductData = [
     {
         price: 60.00,
         special: '',
-        brand: 'Kin',
+        brand: 'Esser',
         model: 'Jordans',
         size: [36, 37, 38, 39, 40, 41, 42, 43, 44],
         color: 'Brown',
@@ -230,7 +230,7 @@ const fullProductData = [
     {
         price: 35.99,
         special: 'New',
-        brand: 'Kin',
+        brand: 'Esser',
         model: 'Go9',
         size: [30, 31, 32, 33, 34, 35],
         color: 'Orange',
@@ -278,7 +278,7 @@ const fullProductData = [
     {
         price: 60.99,
         special: '',
-        brand: 'Kin',
+        brand: 'Esser',
         model: 'Run',
         size: [30, 31, 32, 33, 34, 35],
         color: 'White',

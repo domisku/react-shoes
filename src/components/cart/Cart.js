@@ -11,6 +11,8 @@ function Cart() {
     const [quantities, setQuantities] = useState([]);
     const [toCheckout, setToCheckout] = useState(false);
 
+    const isLoggedIn = localStorage.getItem('token');
+
 
     useEffect(() => {async function getCartItems() {
         const idToken = localStorage.getItem('token');
@@ -142,7 +144,7 @@ function Cart() {
     return (
         <>
             <h3 className={classes.heading}>Cart</h3>
-            {cartData && <div className={classes.container}>
+            {cartData && isLoggedIn && <div className={classes.container}>
                 {filteredData.map((product, index) => <div className={classes.wrapper}>
                     <div className={classes['img-container']}>
                         <img className={classes.image} src={product.image} alt='shoe'/>
@@ -171,6 +173,7 @@ function Cart() {
             </div>}
             {isLoading && <div className={classes['loading-wrapper']}><div className={classes["lds-facebook"]}><div></div><div></div><div></div></div></div>}
             {DBisEmpty && <div className={classes.container}><span className={classes['empty-list']}>Your cart is empty.</span></div>}
+            {!isLoggedIn && <div className={classes.container}><span className={classes['empty-list']}>You must be logged in to see your cart items.</span></div>}
         </>
     );
 }

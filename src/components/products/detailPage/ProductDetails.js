@@ -26,14 +26,19 @@ function ProductDetails() {
   const [objectId, setObjectId] = useState(null);
   const [quantity, setQuantity] = useState(0);
   const [isSizeSelected, setIsSizeSelected] = useState(true);
+  const [error, setError] = useState(false);
 
-  console.log(`objectID:${objectId}`)
+  const isLoggedIn = localStorage.getItem('token');
 
   const details = productData.filter(
     (product) => product.model === params.productId
   )[0];
 
   const options = details.size.map((size) => ({ value: size, label: size }));
+
+  useEffect(() => {
+    setError(false);
+  }, [isLoggedIn]);
 
   async function addToFavourites() {
     const idToken = localStorage.getItem('token');
@@ -282,9 +287,10 @@ function ProductDetails() {
             },
           })}
         />
+        {error && <span className={classes.error}>You must be logged in to do that</span>}
         <div className={classes['button-container']}>
-            <button className={classes["button-to-cart"]} onClick={addToCartHandler}>Add to Cart</button>
-            {!isInFavourites && <button className={classes["button-heart"]} onClick={addToFavourites}>
+            <button className={classes["button-to-cart"]} onClick={isLoggedIn ? addToCartHandler : () => setError(true)}>Add to Cart</button>
+            {!isInFavourites && <button className={classes["button-heart"]} onClick={isLoggedIn ? addToFavourites : () => setError(true)}>
             <FontAwesomeIcon icon={faHeart} className={classes.icon} />
             </button>}
             {isInFavourites && <button className={classes["button-heart-active"]} onClick={removeFromFavourites}>

@@ -10,6 +10,8 @@ function Favourites(props) {
     const [isLoading, setIsLoading] = useState(false);
     const [DBisEmpty, setDBisEmpty] = useState(false);
 
+    const isLoggedIn = localStorage.getItem('token');
+
     useEffect(() => {async function getFavourites() {
         const idToken = localStorage.getItem('token');
         const username = localStorage.getItem('username');
@@ -103,6 +105,7 @@ function Favourites(props) {
             </div>}
             {isLoading && <div className={classes['loading-wrapper']}><div className={classes["lds-facebook"]}><div></div><div></div><div></div></div></div>}
             {DBisEmpty && <div className={classes.container}><span className={classes['empty-list']}>Your favourites list is empty.</span></div>}
+            {!isLoggedIn && <div className={classes.container}><span className={classes['empty-list']}>You must be logged in to see your favourites.</span></div>}
         </>
     );
 }

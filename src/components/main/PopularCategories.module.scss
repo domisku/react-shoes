@@ -4,7 +4,7 @@
     margin-bottom: 5rem;
 }
 
-.container button {
+.container a {
     width: 9rem;
     height: 4rem;
     border: 2px solid black;
@@ -12,9 +12,12 @@
     font-family: 'Roboto', sans-serif;
     font-size: 1.1rem;
     font-weight: 600;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.container button:hover {
+.container a:hover {
     background-color: black;
     color: white;
     cursor: pointer;

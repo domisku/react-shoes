@@ -2,7 +2,6 @@
     width: 100%;
 }
 
-
 .main-content {
     display: flex;
     flex-wrap: wrap;
@@ -10,5 +9,22 @@
     position: sticky;
     top: 1rem;
 }
-    
+
+.content-header {
+    display: flex;
+    align-items: center;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+.select-container {
+    width: 15rem;
+    margin-left: auto;
+    margin-right: 1rem;
+}
+
+.heading {
+    margin-top: 0;
+}
+ 
 
