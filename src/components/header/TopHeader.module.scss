@@ -6,3 +6,9 @@
     justify-content: space-around;
     font-family: 'Lato', sans-serif;
 }
+
+@media (max-width: 768px) {
+    .container {
+        display: none;
+    }
+}

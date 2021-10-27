@@ -7,7 +7,7 @@
 }
 
 .container {
-    width: 80%;
+    width: 60rem;
     position: relative;
     white-space: nowrap;
     overflow: hidden;
@@ -25,4 +25,10 @@
     top: 50%;
     right: 16px;
     color: white;
+}
+
+@media (max-width: 768px) {
+    .wrapper {
+        display: none;
+    }
 }

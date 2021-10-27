@@ -7,3 +7,9 @@ a {
     text-decoration: inherit;
     color: inherit;
   }
+
+@media (max-width: 992px) {
+    .main-content {
+        width: 95%;
+    }
+}

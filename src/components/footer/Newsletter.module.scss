@@ -48,3 +48,17 @@
 .success {
     color: green;
 }
+
+@media (max-width: 576px) {
+    .email {
+        width: 11rem;
+    }
+
+    .button {
+        width: 4rem;
+    }
+
+    .subscribe-text {
+        font-size: 1.5rem;
+    }
+}
