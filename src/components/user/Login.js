@@ -80,8 +80,11 @@ function Login(props) {
         });
         const data = await response.json();
 
+        const expirationTime = new Date(new Date().getTime() + (10 * 1000)).getTime();
+
         dispatch(authActions.storeIdToken({ idToken: data.idToken }));
         dispatch(authActions.storeUsername({ username: makeUsername(data.email) }));
+        dispatch(authActions.storeTokenExpirationTime({ expirationTime }));
 
         function makeUsername(email) {
             return email.replace(/[^\w\d]/g, 'R');

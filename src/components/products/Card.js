@@ -1,6 +1,4 @@
 import classes from './Card.module.scss';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHeart } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
 
 function Card(props) {

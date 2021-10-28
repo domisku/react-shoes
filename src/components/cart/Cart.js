@@ -1,5 +1,4 @@
 import classes from './Cart.module.scss';
-import productData from '../products/productData';
 import { useState, useEffect } from 'react';
 import Checkout from './Checkout';
 
@@ -54,8 +53,8 @@ function Cart() {
         }
         setIsLoading(false);
       }
-      getCartItems()}
-      , []);
+      if (isLoggedIn) getCartItems()}
+      , [isLoggedIn]);
 
       async function removeFromCart(event) {
         event.preventDefault();

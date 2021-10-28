@@ -64,3 +64,9 @@ form .invalid-email {
     text-decoration: underline;
     text-underline-offset: 0.2em;
 }
+
+@media (max-width: 576px) {
+    .form {
+        padding: 1rem;
+    }
+}

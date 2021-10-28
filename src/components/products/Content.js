@@ -15,7 +15,7 @@ const options = [
   {value: 'brandDesc', label: 'Brand Descending'},
 ];
 
-function Content() {
+function Content(props) {
     const [sortBy, setSortBy] = useState('default');
     const filters = useSelector((state) => state.filter.data);
 
@@ -45,7 +45,8 @@ function Content() {
     }
    
   return (
-    <div className={classes.container}>
+    <>
+    {!props.sidebarActive && <div className={classes.container}>
       <div className={classes['content-header']}>
         <h1 className={classes.heading}>Found Products</h1>
         <div className={classes['select-container']}>
@@ -76,8 +77,7 @@ function Content() {
             />
         </div>
       </div>
-      {console.log('return values rerendered')}
-      {<div className={classes["main-content"]}>
+      <div className={classes["main-content"]}>
         {sortedData(sortBy).map((data, index) => {
           return (
             <Card
@@ -90,8 +90,9 @@ function Content() {
             ></Card>
           );
         })}
-      </div>}
-    </div>
+      </div>
+    </div>}
+    </>
   );
 }
 

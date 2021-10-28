@@ -3,8 +3,8 @@
 }
 
 .main-content {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(200px, 1fr));
     position: -webkit-sticky;
     position: sticky;
     top: 1rem;
@@ -12,7 +12,7 @@
 
 .content-header {
     display: flex;
-    align-items: center;
+    flex-direction: column;
     margin-top: 2rem;
     margin-bottom: 1rem;
 }
@@ -25,6 +25,23 @@
 
 .heading {
     margin-top: 0;
+    margin-bottom: 0;
 }
+
+@media (max-width: 992px) {
+    .select-container {
+        margin-left: 0;
+    }
+
+    .heading {
+        margin-bottom: inherit;
+    }
+}
+
+// @media (max-width: 576px) {
+//     .container {
+//         display: none;
+//     }
+// }
  
 

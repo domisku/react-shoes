@@ -7,11 +7,14 @@ import Gender from "./filters/Gender";
 import Type from "./filters/Type";
 import Season from "./filters/Season";
 import { Link } from "react-router-dom";
+import { FontAwesomeIcon as Icon } from '@fortawesome/react-fontawesome';
+import { faFilter } from '@fortawesome/free-solid-svg-icons';
 
-function Sidebar() {
+function Sidebar(props) {
 
   return (
-    <div className={classes.container}>
+    <>
+    <div className={`${classes.container} ${props.sidebarActive && classes.active}`}>
       <h3>Categories</h3>
       <ul className={classes.list}>
         <li><Link to='/products?gender=Women'>Women</Link></li>
@@ -45,7 +48,13 @@ function Sidebar() {
             <Season></Season>
         </li>
       </ul>
+      <button className={classes.button} onClick={props.toggleSidebar}>Show Results</button>
     </div>
+    {!props.sidebarActive && 
+    <div className={classes['expand-button']} onClick={props.toggleSidebar}>
+      <Icon icon={faFilter}></Icon>
+    </div>}
+    </>
   );
 }
 

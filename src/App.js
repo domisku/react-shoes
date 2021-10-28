@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { Route, Switch } from "react-router-dom";
 import "./App.scss";
 
@@ -12,13 +11,13 @@ import AboutUs from "./components/main/AboutUs";
 import PopularCategories from "./components/main/PopularCategories";
 import ProductsPage from "./components/products/ProductsPage";
 import ProductDetails from "./components/products/detailPage/ProductDetails";
+import logoutTimer from "./utils/logoutTimer";
+  
+
+
 
 function App() {
-  const [popupIsShown, setPopupIsShown] = useState(true);
-
-  function closePopupHandler() {
-    setPopupIsShown(false);
-  }
+  logoutTimer();
 
   return (
     <>
@@ -42,7 +41,7 @@ function App() {
         </Switch>
       </main>
       <footer>
-        {popupIsShown && <Popup onClose={closePopupHandler} />}
+        <Popup />
         <Newsletter></Newsletter>
         <Copyright></Copyright>
       </footer>

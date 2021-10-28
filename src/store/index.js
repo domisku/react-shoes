@@ -44,6 +44,15 @@ const filterSlice = createSlice({
     }
 });
 
+let logoutTimer;
+
+function calculateRemainingTime(expirationTime) {
+    const currentTime = new Date().getTime();
+    const remainingDuration = expirationTime - currentTime;
+
+    return remainingDuration;
+}
+
 const initialAuthState = { idToken: localStorage.getItem('token'), username: null, modalClosed: 0 };
 
 const authSlice = createSlice({
@@ -58,11 +67,15 @@ const authSlice = createSlice({
             state.username = action.payload.username;
             localStorage.setItem('username', action.payload.username);
         },
-        login(state) {
+        storeTokenExpirationTime(state, action) {
+            const remainingTime = calculateRemainingTime(action.payload.expirationTime);
+            logoutTimer = setTimeout(() => localStorage.clear(), remainingTime);
+            localStorage.setItem('expirationTime', action.payload.expirationTime.toString());
         },
         logout(state) {
             state.idToken = null;
             localStorage.removeItem('token');
+            if (logoutTimer) clearTimeout(logoutTimer);
         },
         modalClosed(state) {
             state.modalClosed++;

@@ -28,7 +28,6 @@ function Favourites(props) {
         
         if (Object.keys(data).length) setFavouritesData(data);
         
-        
         const likedModels = [];
     
         for (let key in data) {
@@ -37,15 +36,14 @@ function Favourites(props) {
 
         setFilteredData(productData.filter((product) => likedModels.includes(product.model)));
         
-        console.log('Success:', data);
         } catch (error) {
             console.log('Error:', error);
             setDBisEmpty(true);
         }
         setIsLoading(false);
       }
-      getFavourites()}
-      , []);
+      if (isLoggedIn) getFavourites()}
+      , [isLoggedIn]);
 
       async function removeFavourite(event) {
         event.stopPropagation();

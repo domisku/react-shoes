@@ -9,7 +9,7 @@ import Modal from "../../UI/Modal";
 import { useState } from "react";
 import Login from "../../user/Login";
 import Register from "../../user/Register";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import { authActions } from "../../../store";
 import Favourites from "../../favourites/Favourites";
 import Cart from "../../cart/Cart";
@@ -20,39 +20,39 @@ function CustomerActions() {
   const [showUserDropdown, setShowUserDropdown] = useState(false);
 
   const [favouritesPageIsShown, setFavouritesPageIsShown] = useState(false);
-
   const [cartPageIsShown, setCartPageIsShown] = useState(false);
 
   const dispatch = useDispatch();
-  const isLoggedIn = !!useSelector((state) => state.auth.idToken);
+
+  function getIdToken() {
+    return localStorage.getItem('token');
+  }
 
   function toggleUserPage() {
-    if (!userPageIsShown && !isLoggedIn) setUserPageIsShown(true);
+    if (!userPageIsShown && !getIdToken()) setUserPageIsShown(true);
     else setUserPageIsShown(false);
   }
 
   function switchUserPage() {
-    if (!needsRegistration) setNeedsRegistration(true);
-    else setNeedsRegistration(false);
+    setNeedsRegistration(!needsRegistration);
   }
 
   function toggleUserDropdown() {
-    if (!showUserDropdown) setShowUserDropdown(true);
-    else setShowUserDropdown(false);
+    setShowUserDropdown(!showUserDropdown);
+    
   }
 
   function logoutHandler() {
     dispatch(authActions.logout());
+    console.log('logout handler activates')
   }
 
   function toggleFavouritesPage() {
-    if (!favouritesPageIsShown) setFavouritesPageIsShown(true);
-    else setFavouritesPageIsShown(false);
+    setFavouritesPageIsShown(!favouritesPageIsShown);
   }
 
   function toggleCartPage() {
-    if (!cartPageIsShown) setCartPageIsShown(true);
-    else setCartPageIsShown(false);
+    setCartPageIsShown(!cartPageIsShown);
   }
 
   return (
@@ -65,8 +65,8 @@ function CustomerActions() {
         <FontAwesomeIcon icon={faUser} className={classes.icon} />
         {showUserDropdown && (
           <div className={classes["user-dropdown"]}>
-            {isLoggedIn && <button onClick={logoutHandler} className={classes.button}>Log Out</button>}
-            {!isLoggedIn && <button onClick={toggleUserPage} className={classes.button}>Log In</button>}
+            {getIdToken() && <button onClick={logoutHandler} className={classes.button}>Log Out</button>}
+            {!getIdToken() && <button onClick={toggleUserPage} className={classes.button}>Log In</button>}
           </div>
         )}
       </span>
