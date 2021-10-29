@@ -19,7 +19,9 @@ function Slide(props) {
         {slidesData.map((_, index) => (
           <div
             key={index}
-            className={`${classes.slideDot} ${classes[index === props.activeIndex ? "active" : ""]}`}
+            className={`${classes.slideDot} ${
+              classes[index === props.activeIndex ? "active" : ""]
+            }`}
             onClick={() => props.changeIndex(index)}
           ></div>
         ))}

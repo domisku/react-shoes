@@ -1,15 +1,15 @@
 .main-content {
-    width: 80%;
-    margin: auto;
+  width: 80%;
+  margin: auto;
 }
 
 a {
-    text-decoration: inherit;
-    color: inherit;
-  }
+  text-decoration: inherit;
+  color: inherit;
+}
 
 @media (max-width: 992px) {
-    .main-content {
-        width: 95%;
-    }
+  .main-content {
+    width: 95%;
+  }
 }

@@ -25,7 +25,7 @@ function CustomerActions() {
   const dispatch = useDispatch();
 
   function getIdToken() {
-    return localStorage.getItem('token');
+    return localStorage.getItem("token");
   }
 
   function toggleUserPage() {
@@ -39,12 +39,11 @@ function CustomerActions() {
 
   function toggleUserDropdown() {
     setShowUserDropdown(!showUserDropdown);
-    
   }
 
   function logoutHandler() {
     dispatch(authActions.logout());
-    console.log('logout handler activates')
+    console.log("logout handler activates");
   }
 
   function toggleFavouritesPage() {
@@ -65,8 +64,16 @@ function CustomerActions() {
         <FontAwesomeIcon icon={faUser} className={classes.icon} />
         {showUserDropdown && (
           <div className={classes["user-dropdown"]}>
-            {getIdToken() && <button onClick={logoutHandler} className={classes.button}>Log Out</button>}
-            {!getIdToken() && <button onClick={toggleUserPage} className={classes.button}>Log In</button>}
+            {getIdToken() && (
+              <button onClick={logoutHandler} className={classes.button}>
+                Log Out
+              </button>
+            )}
+            {!getIdToken() && (
+              <button onClick={toggleUserPage} className={classes.button}>
+                Log In
+              </button>
+            )}
           </div>
         )}
       </span>
@@ -79,17 +86,24 @@ function CustomerActions() {
       {userPageIsShown && (
         <Modal toggleUserPage={toggleUserPage}>
           {!needsRegistration ? (
-            <Login switchUserPage={switchUserPage} />
+            <Login
+              switchUserPage={switchUserPage}
+              toggleUserPage={toggleUserPage}
+            />
           ) : (
             <Register switchUserPage={switchUserPage} />
           )}
         </Modal>
       )}
       {favouritesPageIsShown && (
-        <Modal toggleFavouritesPage={toggleFavouritesPage}><Favourites toggleFavouritesPage={toggleFavouritesPage} /></Modal>
+        <Modal toggleFavouritesPage={toggleFavouritesPage}>
+          <Favourites toggleFavouritesPage={toggleFavouritesPage} />
+        </Modal>
       )}
       {cartPageIsShown && (
-        <Modal toggleCartPage={toggleCartPage}><Cart /></Modal>
+        <Modal toggleCartPage={toggleCartPage}>
+          <Cart />
+        </Modal>
       )}
     </div>
   );

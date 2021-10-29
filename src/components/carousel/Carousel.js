@@ -1,4 +1,4 @@
-import { useEffect, useState, useCallback, useRef } from "react";
+import { useState } from "react";
 import classes from "./Carousel.module.scss";
 import ArrowLeft from "./ArrowLeft";
 import ArrowRight from "./ArrowRight";
@@ -8,7 +8,6 @@ import slidesData from "./slidesData";
 function Carousel() {
   const [activeIndex, setActiveIndex] = useState(0);
   const [length] = useState(slidesData.length);
-  const timeout = useRef(0);
 
   function goToPrevSlide() {
     let index = activeIndex;
@@ -28,18 +27,6 @@ function Carousel() {
     setActiveIndex(index);
   }
 
-  //   function resetTimeout() {
-  //     if (timeout.current) clearTimeout(timeout.current);
-  //   }
-
-  //   useEffect(() => {
-  //     timeout.current = setTimeout(goToNextSlide, 3000);
-
-  //     return function() {
-  //       resetTimeout();
-  //     };
-  //   });
-
   function changeIndex(dotIndex) {
     setActiveIndex(dotIndex);
   }
@@ -50,7 +37,7 @@ function Carousel() {
         <div className={classes["arrow-left"]}>
           <ArrowLeft goToPrevSlide={goToPrevSlide} />
         </div>
-        <Slide activeIndex={activeIndex} changeIndex={changeIndex}/>
+        <Slide activeIndex={activeIndex} changeIndex={changeIndex} />
         <div className={classes["arrow-right"]}>
           <ArrowRight goToNextSlide={goToNextSlide} />
         </div>

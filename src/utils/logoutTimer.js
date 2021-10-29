@@ -4,7 +4,7 @@ export default function logoutTimer() {
 
   if (expirationTime) {
     const remainingTime = expirationTime - currentTime;
-    
+
     if (remainingTime <= 0) localStorage.clear();
     else setTimeout(() => localStorage.clear(), remainingTime);
   }

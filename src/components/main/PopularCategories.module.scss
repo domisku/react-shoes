@@ -1,57 +1,57 @@
 .container {
-    display: flex;
-    justify-content: center;
-    width: 100%;
+  display: flex;
+  justify-content: center;
+  width: 100%;
 }
 
 .wrapper {
-    display: flex;
-    margin-bottom: 5rem;
-    justify-content: center;
-    width: 100%;
+  display: flex;
+  margin-bottom: 5rem;
+  justify-content: center;
+  width: 100%;
 }
 
 .container a {
-    width: 10rem;
-    height: 4rem;
-    border: 2px solid black;
-    background-color: white;
-    font-family: 'Roboto', sans-serif;
-    font-size: 1.1rem;
-    font-weight: 600;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 1rem 0.4rem 0 0.4rem;
+  width: 10rem;
+  height: 4rem;
+  border: 2px solid black;
+  background-color: white;
+  font-family: "Roboto", sans-serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem 0.4rem 0 0.4rem;
 }
 
 .container a:hover {
-    background-color: black;
-    color: white;
-    cursor: pointer;
+  background-color: black;
+  color: white;
+  cursor: pointer;
 }
 
 .category-heading {
-    font-size: 2rem;
-    font-family: 'Lato', sans-serif;
+  font-size: 2rem;
+  font-family: "Lato", sans-serif;
 }
 
 @media (max-width: 1200px) {
-    .container a {
-        width: 20%;
-    }
+  .container a {
+    width: 20%;
+  }
 
-    .wrapper {
-        flex-wrap: wrap;
-    }
+  .wrapper {
+    flex-wrap: wrap;
+  }
 }
 
 @media (max-width: 576px) {
-    .container a {
-        width: 40%;
-    }
+  .container a {
+    width: 40%;
+  }
 
-    .wrapper {
-        flex-wrap: wrap;
-    }
+  .wrapper {
+    flex-wrap: wrap;
+  }
 }

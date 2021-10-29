@@ -12,9 +12,6 @@ import PopularCategories from "./components/main/PopularCategories";
 import ProductsPage from "./components/products/ProductsPage";
 import ProductDetails from "./components/products/detailPage/ProductDetails";
 import logoutTimer from "./utils/logoutTimer";
-  
-
-
 
 function App() {
   logoutTimer();

@@ -1,59 +1,88 @@
 .form {
-    display: flex;
-    flex-direction: column;
-    font-family: 'Lato', sans-serif;
-    padding: 1rem 3.5rem;
+  display: flex;
+  flex-direction: column;
+  font-family: "Lato", sans-serif;
+  padding: 1rem 3.5rem;
 }
 
 .form button {
-    border: none;
-    background-color: black;
-    color: white;
-    height: 3.6rem;
-    margin-top: 2rem;
-    font-size: larger;
-    font-weight: 700;
-    margin-bottom: 1.6rem;
+  border: none;
+  background-color: black;
+  color: white;
+  height: 3.6rem;
+  margin-top: 2rem;
+  font-size: larger;
+  font-weight: 700;
+  margin-bottom: 1.6rem;
 }
 
 .form button:hover {
-    background-color:rgba(0, 0, 0, 0.8);
-    cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.8);
+  cursor: pointer;
 }
 
 .form label {
-    font-size: 1.5rem;
-    margin-bottom: 0.8rem;
+  font-size: 1.5rem;
+  margin-bottom: 0.8rem;
 }
 
 .form h2 {
-    font-size: 2.5rem;
-    margin-top: 0;
+  font-size: 2.5rem;
+  margin-top: 0;
 }
 
 .form input {
-    height: 3rem;
-    margin-bottom: 1rem;
-    border: 1px solid black;
-    outline: none;
-    padding-left: 1rem;
-    font-size: 1.5rem;
+  height: 3rem;
+  margin-bottom: 1rem;
+  border: 1px solid black;
+  outline: none;
+  padding-left: 1rem;
+  font-size: 1.5rem;
+}
+
+.error {
+  color: red;
+}
+
+.alert-container {
+  font-size: 1.8rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.alert {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.welcome {
+  font-weight: 600;
+  font-size: 2rem;
+}
+
+.icon {
+  margin-right: 1rem;
 }
 
 .new-account {
-    cursor: pointer;
-    font-size: 1.2rem;
-    text-align: center;
-    color: rgb(137, 137, 137);
+  cursor: pointer;
+  font-size: 1.2rem;
+  text-align: center;
+  color: rgb(137, 137, 137);
 }
 
 .new-account:hover {
-    text-decoration: underline;
-    text-underline-offset: 0.2em;
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
 }
 
 @media (max-width: 576px) {
-    .form {
-        padding: 1rem;
-    }
+  .form {
+    padding: 1rem;
+  }
 }

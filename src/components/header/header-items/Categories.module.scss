@@ -1,16 +1,16 @@
 .container {
-    font-family: 'Lato', sans-serif;
-    width: 10rem;
-    display: flex;
-    justify-content: space-between;
-    font-size: 1.7rem;
+  font-family: "Lato", sans-serif;
+  width: 10rem;
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.7rem;
 }
 
 .container span {
-    padding: 1rem 0.6rem;
-    border-bottom: 2px solid transparent;
+  padding: 1rem 0.6rem;
+  border-bottom: 2px solid transparent;
 }
 
 .container span:hover {
-    border-bottom: 2px solid black;
+  border-bottom: 2px solid black;
 }

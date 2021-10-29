@@ -14,32 +14,45 @@ function MainHeader() {
       <div className={classes.wrapper}>
         <Categories />
         <h1 className={classes.title}>
-          <Link to='/'>
+          <Link to="/">
             FOOTPRINT
             <Icon icon={faShoePrints}></Icon>
           </Link>
         </h1>
         <CustomerActions />
       </div>
-      <div className={classes['dropdown-header']}>
-        <div className={classes['dropdown-container']}>
-        <button className={classes.button} onClick={() => setDropdownActive(!dropdownActive)}>
+      <div className={classes["dropdown-header"]}>
+        <div className={classes["dropdown-container"]}>
+          <button
+            className={classes.button}
+            onClick={() => setDropdownActive(!dropdownActive)}
+          >
             <Icon icon={faBars}></Icon>
           </button>
           <h1 className={classes.title2}>
-            <Link to='/'>
+            <Link to="/">
               FOOTPRINT
               <Icon className={classes.icon} icon={faShoePrints}></Icon>
             </Link>
           </h1>
           <CustomerActions />
         </div>
-        {dropdownActive && 
-        <div className={classes['dropdown-items']} onClick={() => setDropdownActive(false)}>
-          <span><Link to='/products?gender=Women'>Women</Link></span>
-          <span><Link to='/products?gender=Men'>Men</Link></span>
-          <span><Link to='/products?gender=Kids'>Kids</Link></span>
-        </div>}
+        {dropdownActive && (
+          <div
+            className={classes["dropdown-items"]}
+            onClick={() => setDropdownActive(false)}
+          >
+            <span>
+              <Link to="/products?gender=Women">Women</Link>
+            </span>
+            <span>
+              <Link to="/products?gender=Men">Men</Link>
+            </span>
+            <span>
+              <Link to="/products?gender=Kids">Kids</Link>
+            </span>
+          </div>
+        )}
       </div>
     </div>
   );

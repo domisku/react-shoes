@@ -1,44 +1,44 @@
 .icon {
-    background-color: white;
-    height: 1.5rem;
+  background-color: white;
+  height: 1.5rem;
 }
 
 .dropdown {
-    width: 100%;
-    display: none;
+  width: 100%;
+  display: none;
 }
 
 .active {
-    display: block;
+  display: block;
 }
 
 .container input {
-    width: 5rem;
-    height: 3rem;
-    outline: none;
-    border: none;
-    font-size: 1.2rem;
-    border: 2px solid lightgray;
-    text-align: center;
+  width: 5rem;
+  height: 3rem;
+  outline: none;
+  border: none;
+  font-size: 1.2rem;
+  border: 2px solid lightgray;
+  text-align: center;
 }
 
 .container input:hover {
-    border: 2px solid black;
+  border: 2px solid black;
 }
 
 .container input:focus {
-    border: 2px solid black;
+  border: 2px solid black;
 }
 
 .container span {
-    text-align: center;
-    width: 2.5rem;
+  text-align: center;
+  width: 2.5rem;
 }
 
 .container {
-   position: relative;
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   margin-top: 1rem;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
 }
