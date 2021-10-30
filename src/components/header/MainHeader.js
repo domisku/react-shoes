@@ -21,7 +21,10 @@ function MainHeader() {
         </h1>
         <CustomerActions />
       </div>
-      <div className={classes["dropdown-header"]}>
+      <div
+        className={classes["dropdown-header"]}
+        onMouseLeave={() => setDropdownActive(false)}
+      >
         <div className={classes["dropdown-container"]}>
           <button
             className={classes.button}

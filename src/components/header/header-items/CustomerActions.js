@@ -56,7 +56,7 @@ function CustomerActions() {
 
   return (
     <div className={classes.container}>
-      <span
+      <span className={classes['icon-span']}
         onClick={toggleUserPage}
         onMouseEnter={toggleUserDropdown}
         onMouseLeave={toggleUserDropdown}
@@ -77,10 +77,10 @@ function CustomerActions() {
           </div>
         )}
       </span>
-      <span onClick={toggleFavouritesPage}>
+      <span onClick={toggleFavouritesPage} className={classes['icon-span']}>
         <FontAwesomeIcon icon={faHeart} className={classes.icon} />
       </span>
-      <span onClick={toggleCartPage}>
+      <span onClick={toggleCartPage} className={classes['icon-span']}>
         <FontAwesomeIcon icon={faCartShopping} className={classes.icon} />
       </span>
       {userPageIsShown && (

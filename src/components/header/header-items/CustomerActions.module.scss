@@ -6,7 +6,6 @@
 .icon {
   height: 1.5rem;
   padding: 0rem 1rem;
-  cursor: pointer;
 }
 
 .container span {
@@ -28,6 +27,7 @@
   align-items: center;
   justify-content: center;
 }
+
 .button {
   border: none;
   background-color: black;
@@ -43,6 +43,18 @@
 
 .button:hover {
   background-color: rgba(0, 0, 0, 0.8);
+}
+
+.icon-span {
+  cursor: pointer;
+}
+
+.icon-span .icon {
+  transition: 100ms linear;
+}
+
+.icon-span:hover .icon {
+  transform: scale(1.25);
 }
 
 @media (max-width: 576px) {

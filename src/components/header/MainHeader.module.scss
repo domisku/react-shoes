@@ -1,6 +1,8 @@
 .container {
   height: 4rem;
   border-bottom: 2px solid rgb(239, 239, 239);
+  position: relative;
+  z-index: 1;
 }
 
 .wrapper {
@@ -66,7 +68,6 @@
   align-items: center;
   width: 100%;
   background-color: white;
-  z-index: 1;
   text-align: center;
   font-family: "Lato", sans-serif;
   border-bottom: 2px solid rgb(239, 239, 239);
@@ -119,5 +120,22 @@
 @media (max-width: 576px) {
   .icon {
     display: none;
+  }
+}
+
+.dropdown-items {
+  animation: growDown 300ms ease-in-out forwards;
+  transform-origin: top center;
+}
+
+@keyframes growDown {
+  0% {
+    transform: scaleY(0);
+  }
+  80% {
+    transform: scaleY(1);
+  }
+  100% {
+    transform: scaleY(1);
   }
 }
