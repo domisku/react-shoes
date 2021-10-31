@@ -5,15 +5,20 @@
   font-family: "Lato", sans-serif;
 }
 
+.img-container {
+    max-width: 27rem;
+}
+
 .img-container img {
   width: 100%;
   height: 30rem;
   object-fit: cover;
   border: 1px solid black;
+  margin: -1px;
 }
 
 .button-to-cart {
-  width: 80%;
+  width: 90%;
   height: 4rem;
   border: 1px solid black;
   background-color: black;
@@ -46,7 +51,8 @@
 
 .button-heart-active {
   background-color: white;
-  border: 2px solid rgb(203, 162, 248);
+  border: 1px solid rgb(203, 162, 248);
+  outline: 1px solid rgb(203, 162, 248);
   height: 4rem;
   width: 4rem;
   margin-bottom: 1rem;
@@ -143,6 +149,10 @@
     margin-left: 0;
     width: 100%;
   }
+
+  .img-container {
+    max-width: 100%;
+}
 
   .img-container img {
     width: 100%;

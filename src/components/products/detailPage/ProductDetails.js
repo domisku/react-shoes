@@ -171,9 +171,11 @@ function ProductDetails() {
   }, [details.model, modalClosed, selectedSize]);
 
   function addToCartHandler() {
-    if (quantity) updateQuantity();
-    else if (selectedSize) addToCart();
-    else setIsSizeSelected(false);
+    if (!alert) {
+      if (quantity) updateQuantity();
+      else if (selectedSize) addToCart();
+      else setIsSizeSelected(false);
+    }
   }
 
   async function addToCart() {
