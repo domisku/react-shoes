@@ -32,8 +32,8 @@ function Carousel() {
   }
 
   return (
-    <div className={classes.wrapper}>
-      <div className={classes.container}>
+    <div className={classes.container}>
+      <div className={classes.wrapper}>
         <div className={classes["arrow-left"]}>
           <ArrowLeft goToPrevSlide={goToPrevSlide} />
         </div>

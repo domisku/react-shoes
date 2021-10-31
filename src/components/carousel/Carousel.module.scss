@@ -1,4 +1,4 @@
-.wrapper {
+.container {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -6,7 +6,7 @@
   margin-bottom: 5rem;
 }
 
-.container {
+.wrapper {
   width: 60rem;
   position: relative;
   white-space: nowrap;
@@ -28,7 +28,7 @@
 }
 
 @media (max-width: 768px) {
-  .wrapper {
+  .container {
     display: none;
   }
 }
