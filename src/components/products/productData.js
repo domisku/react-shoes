@@ -10,7 +10,7 @@ const productData = [
     type: "Type 1",
     season: "Spring-Summer",
     image:
-      "https://images.unsplash.com/photo-1584641914864-e752bfef136d?ixid=MnwxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8N3xJeU9CLW82ZXJ2VXx8ZW58MHx8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+      "https://images.unsplash.com/photo-1584641914864-e752bfef136d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1074&q=80",
   },
   {
     price: 100,
@@ -23,7 +23,7 @@ const productData = [
     type: "Type 2",
     season: "Autumn",
     image:
-      "https://images.unsplash.com/photo-1605733513549-de9b150bd70d?ixid=MnwxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8MTN8SXlPQi1vNmVydlV8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+      "https://images.unsplash.com/photo-1605733513549-de9b150bd70d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1170&q=80",
   },
   {
     price: 50,
@@ -36,7 +36,7 @@ const productData = [
     type: "Type 2",
     season: "Autumn",
     image:
-      "https://images.unsplash.com/photo-1494955464529-790512c65305?ixid=MnwxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8NDR8SXlPQi1vNmVydlV8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+      "https://images.unsplash.com/photo-1494955464529-790512c65305?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1171&q=80",
   },
   {
     price: 200,
@@ -49,7 +49,7 @@ const productData = [
     type: "Type 1",
     season: "Spring-Summer",
     image:
-      "https://images.unsplash.com/photo-1534653299134-96a171b61581?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8NTh8SXlPQi1vNmVydlV8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60",
+      "https://images.unsplash.com/photo-1534653299134-96a171b61581?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=975&q=80",
   },
   {
     price: 50,
@@ -62,7 +62,7 @@ const productData = [
     type: "Type 1",
     season: "Spring-Summer",
     image:
-      "https://images.unsplash.com/photo-1585059895926-5e3be4d7c385?ixid=MnwxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8NDl8SXlPQi1vNmVydlV8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+      "https://images.unsplash.com/photo-1585059895926-5e3be4d7c385?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1170&q=80",
   },
   {
     price: 200,
@@ -75,7 +75,7 @@ const productData = [
     type: "Type 1",
     season: "Summer-Spring",
     image:
-      "https://images.unsplash.com/photo-1581101767113-1677fc2beaa8?ixid=MnwxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8MTd8SXlPQi1vNmVydlV8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+      "https://images.unsplash.com/photo-1581101767113-1677fc2beaa8?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=880&q=80",
   },
   {
     price: 50,
@@ -88,7 +88,7 @@ const productData = [
     type: "Type 4",
     season: "All-Year",
     image:
-      "https://images.unsplash.com/photo-1616663308968-58162d332720?ixid=MnwxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8NDB8ZzVndFdFTGFMekl8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+      "https://images.unsplash.com/photo-1616663308968-58162d332720?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1170&q=80",
   },
   {
     price: 60,
@@ -101,7 +101,7 @@ const productData = [
     type: "Type 4",
     season: "All-Year",
     image:
-      "https://images.unsplash.com/photo-1533867617858-e7b97e060509?ixid=MnwxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8Mjl8ZzVndFdFTGFMekl8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+      "https://images.unsplash.com/photo-1533867617858-e7b97e060509?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1169&q=80",
   },
   {
     price: 150,
@@ -114,7 +114,7 @@ const productData = [
     type: "Type 5",
     season: "Autumn",
     image:
-      "https://images.unsplash.com/photo-1616406432452-07bc5938759d?ixid=MnwxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8NDZ8ZzVndFdFTGFMekl8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+      "https://images.unsplash.com/photo-1616406432452-07bc5938759d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1171&q=80",
   },
   {
     price: 50,
@@ -127,7 +127,7 @@ const productData = [
     type: "Type 3",
     season: "All-Year",
     image:
-      "https://images.unsplash.com/photo-1605733160314-4fc7dac4bb16?ixid=MnwxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8NDh8ZzVndFdFTGFMekl8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+      "https://images.unsplash.com/photo-1605733160314-4fc7dac4bb16?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1190&q=80",
   },
   {
     price: 20,
@@ -140,7 +140,7 @@ const productData = [
     type: "Type 6",
     season: "Spring-Summer",
     image:
-      "https://images.unsplash.com/photo-1603145733190-59811e523c72?ixid=MnwxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8NTF8ZzVndFdFTGFMekl8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+      "https://images.unsplash.com/photo-1603145733190-59811e523c72?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1170&q=80",
   },
   {
     price: 40,
@@ -153,7 +153,7 @@ const productData = [
     type: "Type 7",
     season: "All-Year",
     image:
-      "https://images.unsplash.com/photo-1617689563472-c66428e83d17?ixid=MnwxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8NDd8ZzVndFdFTGFMekl8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+      "https://images.unsplash.com/photo-1617689563472-c66428e83d17?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1170&q=80",
   },
   {
     price: 75,
@@ -166,7 +166,7 @@ const productData = [
     type: "Type 8",
     season: "Spring-Summer",
     image:
-      "https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixid=MnwxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8NDF8ZzVndFdFTGFMekl8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+      "https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
   },
   {
     price: 60,
@@ -179,7 +179,7 @@ const productData = [
     type: "Type 8",
     season: "Spring-Summer",
     image:
-      "https://images.unsplash.com/photo-1549298916-b41d501d3772?ixid=MnwxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8MzZ8ZzVndFdFTGFMekl8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+      "https://images.unsplash.com/photo-1549298916-b41d501d3772?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1112&q=80",
   },
   {
     price: 65,
@@ -192,7 +192,7 @@ const productData = [
     type: "Type 9",
     season: "All-Year",
     image:
-      "https://images.unsplash.com/photo-1494496195158-c3becb4f2475?ixid=MnwxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8MjF8ZzVndFdFTGFMekl8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+      "https://images.unsplash.com/photo-1494496195158-c3becb4f2475?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1170&q=80",
   },
   {
     price: 40,
@@ -205,7 +205,7 @@ const productData = [
     type: "Type 7",
     season: "Spring-Summer",
     image:
-      "https://images.unsplash.com/photo-1608230164697-c791326d284c?ixid=MnwxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8MjJ8ZzVndFdFTGFMekl8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+      "https://images.unsplash.com/photo-1608230164697-c791326d284c?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1074&q=80",
   },
   {
     price: 78,
@@ -218,7 +218,7 @@ const productData = [
     type: "Type 7",
     season: "All-Year",
     image:
-      "https://images.unsplash.com/photo-1539185441755-769473a23570?ixid=MnwxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8MjN8SXlPQi1vNmVydlV8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+      "https://images.unsplash.com/photo-1539185441755-769473a23570?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80",
   },
   {
     price: 50,
@@ -231,7 +231,7 @@ const productData = [
     type: "Type 7",
     season: "Spring-Autumn",
     image:
-      "https://images.unsplash.com/photo-1551107696-a4b0c5a0d9a2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8MTF8RmRmeGxTZWZRV3d8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60",
+      "https://images.unsplash.com/photo-1551107696-a4b0c5a0d9a2?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1112&q=80",
   },
   {
     price: 35,
@@ -244,7 +244,7 @@ const productData = [
     type: "Type 7",
     season: "Spring-Autumn",
     image:
-      "https://images.unsplash.com/photo-1514989940723-e8e51635b782?ixid=MnwxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8MjZ8RmRmeGxTZWZRV3d8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+      "https://images.unsplash.com/photo-1514989940723-e8e51635b782?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1170&q=80",
   },
   {
     price: 40,
@@ -257,7 +257,7 @@ const productData = [
     type: "Type 7",
     season: "Spring-Summer",
     image:
-      "https://images.unsplash.com/photo-1584564515943-b54cbb61836b?ixid=MnwxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8MjR8RmRmeGxTZWZRV3d8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+      "https://images.unsplash.com/photo-1584564515943-b54cbb61836b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1170&q=80",
   },
   {
     price: 15,
@@ -270,7 +270,7 @@ const productData = [
     type: "Type 7",
     season: "Spring-Summer",
     image:
-      "https://images.unsplash.com/photo-1507464098880-e367bc5d2c08?ixid=MnwxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8MTh8RmRmeGxTZWZRV3d8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+      "https://images.unsplash.com/photo-1507464098880-e367bc5d2c08?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1170&q=80",
   },
   {
     price: 80,
@@ -283,7 +283,7 @@ const productData = [
     type: "Type 7",
     season: "Spring-Summer",
     image:
-      "https://images.unsplash.com/photo-1590483736622-39da8acf7eb8?ixid=MnwxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8MTd8RmRmeGxTZWZRV3d8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+      "https://images.unsplash.com/photo-1590483736622-39da8acf7eb8?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=764&q=80",
   },
   {
     price: 60,
@@ -296,7 +296,7 @@ const productData = [
     type: "Type 7",
     season: "All-Year",
     image:
-      "https://images.unsplash.com/photo-1512374382149-233c42b6a83b?ixid=MnwxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8MTZ8RmRmeGxTZWZRV3d8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+      "https://images.unsplash.com/photo-1512374382149-233c42b6a83b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=735&q=80",
   },
 ];
 
