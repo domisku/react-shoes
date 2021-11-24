@@ -20,7 +20,7 @@ function Favourites(props) {
         setIsLoading(true);
 
         const response = await fetch(
-          `https://react-shoes-default-rtdb.europe-west1.firebasedatabase.app/users/${username}/liked.json?auth=${idToken}`,
+          `${process.env.REACT_APP_DATABASE_URI}/users/${username}/liked.json?auth=${idToken}`,
           {
             method: "GET",
             headers: {
@@ -69,7 +69,7 @@ function Favourites(props) {
 
     try {
       await fetch(
-        `https://react-shoes-default-rtdb.europe-west1.firebasedatabase.app/users/${username}/liked/${keyInDatabase}.json?auth=${idToken}`,
+        `${process.env.REACT_APP_DATABASE_URI}/users/${username}/liked/${keyInDatabase}.json?auth=${idToken}`,
         {
           method: "DELETE",
           headers: {

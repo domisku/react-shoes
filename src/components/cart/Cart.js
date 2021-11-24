@@ -19,7 +19,7 @@ function Cart() {
       try {
         setIsLoading(true);
         const response = await fetch(
-          `https://react-shoes-default-rtdb.europe-west1.firebasedatabase.app/users/${username}/cart.json?auth=${idToken}`,
+          `${process.env.REACT_APP_DATABASE_URI}/users/${username}/cart.json?auth=${idToken}`,
           {
             method: "GET",
             headers: {
@@ -72,7 +72,7 @@ function Cart() {
 
     try {
       await fetch(
-        `https://react-shoes-default-rtdb.europe-west1.firebasedatabase.app/users/${username}/cart/${keyInDatabase}.json?auth=${idToken}`,
+        `${process.env.REACT_APP_DATABASE_URI}/users/${username}/cart/${keyInDatabase}.json?auth=${idToken}`,
         {
           method: "DELETE",
           headers: {
@@ -114,7 +114,7 @@ function Cart() {
 
     try {
       await fetch(
-        `https://react-shoes-default-rtdb.europe-west1.firebasedatabase.app/users/${username}/cart/${keyInDatabase}.json?auth=${idToken}`,
+        `${process.env.REACT_APP_DATABASE_URI}/users/${username}/cart/${keyInDatabase}.json?auth=${idToken}`,
         {
           method: "PATCH",
           headers: {

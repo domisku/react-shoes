@@ -2,7 +2,7 @@ import classes from "./Register.module.scss";
 import { useState, useRef } from "react";
 
 const url =
-  "https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyBnxvW60oxEUOdVTAER-T14lcNiJq6ybVE";
+  `https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=${process.env.REACT_APP_WEB_API_KEY}`;
 
 function Register(props) {
   const passwordInputRef = useRef();
