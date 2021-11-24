@@ -4,6 +4,8 @@ import Card from "./Card";
 import productData from "./productData";
 import Select from "react-select";
 import { useState } from "react";
+import { FontAwesomeIcon as Icon } from "@fortawesome/react-fontawesome";
+import { faFaceFrown } from "@fortawesome/free-solid-svg-icons";
 
 const options = [
   { value: "default", label: "Default Sorting" },
@@ -22,7 +24,7 @@ function Content(props) {
   if (filters === null) data = productData;
   else
     data = productData.filter(
-      (product, index) =>
+      (product) =>
         filters.brands.includes(product.brand) &&
         filters.seasons.includes(product.season) &&
         filters.colors.includes(product.color) &&
@@ -87,18 +89,24 @@ function Content(props) {
             </div>
           </div>
           <div className={classes["main-content"]}>
-            {sortedData(sortBy).map((data, index) => {
-              return (
-                <Card
-                  brand={data.brand}
-                  model={data.model}
-                  price={data.price}
-                  special={data.special}
-                  image={data.image}
-                  key={`c${index}`}
-                ></Card>
-              );
-            })}
+            {data[0] &&
+              sortedData(sortBy).map((data, index) => {
+                return (
+                  <Card
+                    brand={data.brand}
+                    model={data.model}
+                    price={data.price}
+                    special={data.special}
+                    image={data.image}
+                    key={`c${index}`}
+                  ></Card>
+                );
+              })}
+            {!data[0] && (
+              <span className={classes["no-products"]}>
+                No products found <Icon icon={faFaceFrown} />
+              </span>
+            )}
           </div>
         </div>
       )}
