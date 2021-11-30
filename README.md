@@ -2,7 +2,7 @@
 
 Footprint is an eCommerce project for selling footwear.
 
-Tech used for this project: React.js, SCSS for styling, Firebase for realtime database and authentication.
+Tech used for this project: React.js, Redux, SCSS for styling, Firebase for realtime database and authentication.
 
 ## Features
 
