@@ -12,6 +12,16 @@ Tech used for this project: React.js, SCSS for styling, Firebase for realtime da
 4. User authentication with firebase
 5. Project is a single-page app
 
+## Preview  
+
+![Home page](https://user-images.githubusercontent.com/84922120/144010775-6d907102-f2eb-4cd7-9f84-ba2e7179b5f8.png)
+
+![Products page](https://user-images.githubusercontent.com/84922120/144010787-2ebaab18-5e0d-495b-b3b3-a85caf5af48a.png)
+
+![Product details page](https://user-images.githubusercontent.com/84922120/144010790-6efd18ad-ff55-4614-9581-b3ccb0140fa6.png)
+
+![Favourites page](https://user-images.githubusercontent.com/84922120/144010798-f393c9e6-233f-4d5a-b7c6-2a07a6c924dd.png)
+
 ## How to use
 
 Follow these steps to run the project locally:
