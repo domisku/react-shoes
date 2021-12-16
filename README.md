@@ -14,6 +14,8 @@ Tech used for this project: React.js, Redux, SCSS for styling, Firebase for real
 
 ## Preview  
 
+Preview deployed project on [Vercel](https://footprint-blush.vercel.app/)  
+
 ![Home page](https://user-images.githubusercontent.com/84922120/144010775-6d907102-f2eb-4cd7-9f84-ba2e7179b5f8.png)
 
 ![Products page](https://user-images.githubusercontent.com/84922120/144010787-2ebaab18-5e0d-495b-b3b3-a85caf5af48a.png)
